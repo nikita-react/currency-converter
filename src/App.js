@@ -1,6 +1,6 @@
-import MainWrapper from "./components/MainWrapper";
+import Wrapper from "./components/Wrapper";
 
 const App = () => {
-  return <MainWrapper></MainWrapper>;
+  return <Wrapper />;
 };
 export default App;
