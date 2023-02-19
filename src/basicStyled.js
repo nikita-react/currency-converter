@@ -6,6 +6,7 @@ export const Image = styled.img`
 
 export const Link = styled.a`
   cursor: pointer;
+  color: ${({ color }) => (color ? color : "rgb(24, 119, 242)")};
 `;
 
 export const Container = styled.div`

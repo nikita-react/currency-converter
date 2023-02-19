@@ -7,6 +7,7 @@ export const Li = styled.li`
   background: ${({ background }) => (background ? background : "#fff")};
   padding: 15px 8px;
   display: flex;
+  justify-content: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   &:first-child {
     padding: 8px;

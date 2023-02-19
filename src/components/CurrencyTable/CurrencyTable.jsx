@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
 import { Ul, Li, Text } from "./styled";
-import api from "../../api";
+import { useSelector } from "react-redux";
 
 const CurrencyTable = () => {
-  const [currentExchangeRates, setCurrentExchangeRates] = useState([]);
-
-  useEffect(() => {
-    api.getExchangeRates().then((res) => {
-      setCurrentExchangeRates(res);
-    });
-  }, []);
-
+  const { currencyData, loading } = useSelector((state) => state.currency);
   return (
     <Ul>
       <Li>
@@ -18,8 +10,13 @@ const CurrencyTable = () => {
         <Text fontWeight={"700"}>Buy</Text>
         <Text fontWeight={"700"}>Sell</Text>
       </Li>
-      {currentExchangeRates &&
-        currentExchangeRates.map((item) => (
+      {loading ? (
+        <Li>
+          <Text>Loading...</Text>
+        </Li>
+      ) : (
+        currencyData &&
+        currencyData.map((item) => (
           <Li key={item.ccy}>
             <Text fontWeight={"500"}>
               {item.ccy}/{item.base_ccy}
@@ -27,7 +24,8 @@ const CurrencyTable = () => {
             <Text>{item.buy}</Text>
             <Text>{item.sale}</Text>
           </Li>
-        ))}
+        ))
+      )}
     </Ul>
   );
 };

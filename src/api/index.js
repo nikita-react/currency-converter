@@ -5,13 +5,9 @@ const PRIVATBANK_URL =
 
 const api = {
   getExchangeRates: () => {
-    return axios
-      .get(
-        `https://api.allorigins.win/raw?url=${encodeURIComponent(
-          PRIVATBANK_URL
-        )}`
-      )
-      .then((response) => response.data);
+    return axios.get(
+      `https://api.allorigins.win/raw?url=${encodeURIComponent(PRIVATBANK_URL)}`
+    );
   },
 };
 
