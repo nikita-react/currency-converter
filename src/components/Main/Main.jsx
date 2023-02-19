@@ -1,10 +1,13 @@
 import { MainStyled } from "./styled";
 import { Container } from "../../basicStyled";
+import CurrencyTable from "../CurrencyTable";
 
 const Main = () => {
   return (
     <MainStyled>
-      <Container maxWidth={"1000px"}></Container>
+      <Container maxWidth={"700px"}>
+        <CurrencyTable />
+      </Container>
     </MainStyled>
   );
 };
