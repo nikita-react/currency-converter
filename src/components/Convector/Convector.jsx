@@ -37,7 +37,7 @@ const Convector = () => {
 
   useEffect(() => {
     getRate(amountInUah, foreignCurrency);
-  }, [amountInUah, foreignCurrency, amountInForeign]);
+  }, [amountInUah, foreignCurrency, amountInForeign, switchConvector]);
 
   return (
     <FlexWrapper direction={switchConvector ? "row-reverse" : "row"}>
