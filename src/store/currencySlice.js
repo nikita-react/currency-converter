@@ -5,9 +5,22 @@ export const getCurrency = createAsyncThunk(
   "currency/getCurrency",
   async (_, { rejectWithValue }) => {
     try {
+      const requestCount = JSON.parse(localStorage.getItem("request-counter"));
+      if (requestCount >= 5) {
+        return rejectWithValue({ status: 404, message: "Not Found" });
+      }
+
       const res = await api.getExchangeRates();
+
       if (!res.status) {
         throw new Error("Server Error!");
+      }
+
+      if (res.status === 200) {
+        localStorage.setItem(
+          "request-counter",
+          JSON.stringify(1 + requestCount)
+        );
       }
       return res.data;
     } catch (error) {

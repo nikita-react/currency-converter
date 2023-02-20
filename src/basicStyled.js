@@ -17,4 +17,19 @@ export const Container = styled.div`
 
 export const Button = styled.button`
   cursor: pointer;
+  font-size: ${({ fontSize }) => fontSize};
+  font-weight: ${({ fontWeight }) => fontWeight};
+  color: ${({ color }) => color};
+  display: ${({ display }) => display};
+  background: ${({ background }) => background};
+  padding: ${({ padding }) => padding};
+  margin: ${({ margin }) => margin};
+  border-radius: 10px;
+`;
+
+export const Text = styled.p`
+  font-size: ${({ fontSize }) => fontSize};
+  font-weight: ${({ fontWeight }) => fontWeight};
+  color: ${({ color }) => color};
+  display: ${({ display }) => display};
 `;

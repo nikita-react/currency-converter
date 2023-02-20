@@ -1,8 +1,15 @@
+import { useEffect } from "react";
 import { Ul, Li, Text } from "./styled";
 import { useSelector } from "react-redux";
 
 const CurrencyTable = () => {
-  const { currencyData, loading } = useSelector((state) => state.currency);
+  const { currencyData, loading, status } = useSelector(
+    (state) => state.currency
+  );
+  if (status === "rejected") {
+    throw new Error();
+  }
+
   return (
     <Ul>
       <Li>
