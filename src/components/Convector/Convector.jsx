@@ -4,21 +4,27 @@ import SelectComponent from "../SelectComponent";
 import InputComponent from "../InputComponent";
 import { useSelector } from "react-redux";
 
-const getRate = (amountInUah, exchangeRates) => {
-  if (amountInUah > 0 && exchangeRates > 0) {
-    const result = amountInUah / exchangeRates;
-    return result;
-  }
-};
-
 const Convector = () => {
   const { currencyData } = useSelector((state) => state.currency);
-  const [exchangeRates, setExchangeRates] = useState(0);
+  const [foreignCurrency, setForeignCurrency] = useState("EUR");
   const [amountInUah, setAmountInUah] = useState(0);
   const [amountInForeign, setAmountInForeign] = useState(0);
+
+  const getRate = (amountInUah, foreignCurrency) => {
+    const exchange = currencyData.find((i) => {
+      return i.ccy === foreignCurrency;
+    });
+
+    if (!exchange) {
+      return;
+    }
+    const foreignSale = exchange.sale;
+    return amountInUah / foreignSale;
+  };
+
   useEffect(() => {
-    setAmountInForeign(getRate(amountInUah, exchangeRates));
-  }, [amountInUah, exchangeRates]);
+    setAmountInForeign(getRate(amountInUah, foreignCurrency));
+  }, [amountInUah, foreignCurrency, currencyData]);
 
   return (
     <FlexWrapper>
@@ -29,9 +35,9 @@ const Convector = () => {
       <SelectInputWrapper>
         <SelectComponent
           name={"Currency"}
-          handleChange={setExchangeRates}
+          handleChange={setForeignCurrency}
           data={currencyData}
-          value={exchangeRates}
+          value={foreignCurrency}
         />
         <InputComponent value={amountInForeign} disabled />
       </SelectInputWrapper>

@@ -17,7 +17,7 @@ const SelectComponent = ({ name, value, handleChange, data }) => {
         {data ? (
           data.map((i) => {
             return (
-              <MenuItem key={i.ccy} value={i.sale}>
+              <MenuItem key={i.ccy} value={i.ccy}>
                 {i.ccy}
               </MenuItem>
             );
