@@ -1,4 +1,5 @@
 import TextField from "@mui/material/TextField";
+import "./index.css";
 
 const InputComponent = ({ value, handleChange, disabled }) => {
   const inputStyle = {
@@ -16,6 +17,7 @@ const InputComponent = ({ value, handleChange, disabled }) => {
       value={value}
       onChange={(e) => handleChange(e.target.value)}
       disabled={disabled}
+      className="CustomTextField"
       sx={disabled ? inputStyle : {}}
     />
   );

@@ -11,7 +11,7 @@ const Header = () => {
         href="https://github.com/nikita-react/currency-converter"
         target="_blank"
       >
-        https://github.com/nikita-react/currency-converter
+        github.com/currency-converter
       </Link>
     </HeaderStyled>
   );

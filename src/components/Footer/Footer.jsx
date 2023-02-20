@@ -1,4 +1,4 @@
-import { FooterStyled, Text, SocialMediaLinksWrapper } from "./styled";
+import { FooterStyled, Text, SocialMediaLinksWrapper, Line } from "./styled";
 import { Link } from "../../basicStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,7 +12,9 @@ import {
 const Footer = () => {
   return (
     <FooterStyled>
-      <Text>Copyright © INSART 1993-2023 | All Rights Reserved</Text>
+      <Text>
+        Copyright © INSART 1993-2023 <Line>|</Line> All Rights Reserved
+      </Text>
       <SocialMediaLinksWrapper>
         <Link href="https://www.linkedin.com/company/insart" target="_blank">
           <FontAwesomeIcon

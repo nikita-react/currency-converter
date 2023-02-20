@@ -1,0 +1,5 @@
+@media (max-height: 568px) {
+    .CustomTextField input {
+        padding: 10px !important;
+    }
+}
