@@ -4,6 +4,7 @@ import { Container } from "../../basicStyled";
 import CurrencyTable from "../CurrencyTable";
 import { useDispatch } from "react-redux";
 import { getCurrency } from "../../store/currencySlice";
+import Convector from "../Convector";
 
 const Main = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Main = () => {
     <MainStyled>
       <Container maxWidth={"700px"}>
         <CurrencyTable />
+        <Convector />
       </Container>
     </MainStyled>
   );

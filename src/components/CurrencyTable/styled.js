@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Ul = styled.ul`
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 100px;
 `;
 export const Li = styled.li`
   background: ${({ background }) => (background ? background : "#fff")};
