@@ -5,7 +5,6 @@ export const getCurrency = createAsyncThunk(
   "currency/getCurrency",
   async (_, { rejectWithValue }) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
       const res = await api.getExchangeRates();
       if (!res.status) {
         throw new Error("Server Error!");

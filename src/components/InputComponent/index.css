@@ -3,3 +3,10 @@
         padding: 10px !important;
     }
 }
+
+
+.CustomTextField input::-webkit-outer-spin-button,
+.CustomTextField input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

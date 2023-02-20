@@ -14,3 +14,7 @@ export const Container = styled.div`
   max-width: ${({ maxWidth }) => maxWidth};
   width: 100%;
 `;
+
+export const Button = styled.button`
+  cursor: pointer;
+`;

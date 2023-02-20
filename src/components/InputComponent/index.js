@@ -18,6 +18,7 @@ const InputComponent = ({ value, handleChange, disabled }) => {
       onChange={(e) => handleChange(e.target.value)}
       disabled={disabled}
       className="CustomTextField"
+      InputProps={{ inputProps: { min: 0 } }}
       sx={disabled ? inputStyle : {}}
     />
   );
