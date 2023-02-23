@@ -11,7 +11,7 @@ export const getCurrency = createAsyncThunk(
       }
 
       const res = await api.getExchangeRates();
-      if (!res.status) {
+      if (res.status.http_code >= 400) {
         throw new Error("Server Error!");
       }
 

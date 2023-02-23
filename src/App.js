@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Wrapper from "./components/Wrapper";
 import GlobalStyle from "./globalStyled";
 
