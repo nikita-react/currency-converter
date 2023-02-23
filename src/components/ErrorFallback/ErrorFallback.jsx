@@ -12,8 +12,8 @@ const ErrorFallback = ({ resetErrorBoundary }) => {
         >
           404.
         </Text>
-        That's an error. Also this link may have an error from cors please do a
-        git clone
+        That's an error. Also this link may have error from cors, please run on
+        local server
       </Text>
       <Button
         background={"#c9c9c9"}
