@@ -32,4 +32,5 @@ export const Text = styled.p`
   font-weight: ${({ fontWeight }) => fontWeight};
   color: ${({ color }) => color};
   display: ${({ display }) => display};
+  line-height: ${({ lineHeight }) => lineHeight};
 `;
