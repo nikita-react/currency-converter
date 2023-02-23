@@ -11,18 +11,17 @@ export const getCurrency = createAsyncThunk(
       }
 
       const res = await api.getExchangeRates();
-
       if (!res.status) {
         throw new Error("Server Error!");
       }
 
-      if (res.status === 200) {
+      if (res.status.http_code === 200) {
         localStorage.setItem(
           "request-counter",
           JSON.stringify(1 + requestCount)
         );
       }
-      return res.data;
+      return JSON.parse(res.contents);
     } catch (error) {
       return rejectWithValue(error.message);
     }
