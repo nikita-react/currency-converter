@@ -6,6 +6,7 @@ const CurrencyTable = () => {
   const { currencyData, loading, status } = useSelector(
     (state) => state.currency
   );
+
   if (status === "rejected") {
     throw new Error();
   }

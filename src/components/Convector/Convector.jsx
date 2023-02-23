@@ -16,7 +16,7 @@ const Convector = () => {
   const [switchConvector, setSwitchConvector] = useState(false);
 
   const getRate = (amountInUah, foreignCurrency) => {
-    const exchange = currencyData.find((i) => {
+    const exchange = currencyData?.find((i) => {
       return i.ccy === foreignCurrency;
     });
 

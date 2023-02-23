@@ -38,22 +38,22 @@ const currencySlice = createSlice({
     error: null,
   },
   reducers: {},
-  extraReducers: {
-    [getCurrency.pending]: (state) => {
+  extraReducers: (builder) => {
+    builder.addCase(getCurrency.pending, (state) => {
       state.status = "loading";
       state.error = null;
       state.loading = true;
-    },
-    [getCurrency.fulfilled]: (state, action) => {
+    });
+    builder.addCase(getCurrency.fulfilled, (state, action) => {
       state.status = "resolved";
       state.currencyData = action.payload;
       state.loading = false;
-    },
-    [getCurrency.rejected]: (state, action) => {
+    });
+    builder.addCase(getCurrency.rejected, (state, action) => {
       state.status = "rejected";
       state.error = action.payload;
       state.loading = false;
-    },
+    });
   },
 });
 
