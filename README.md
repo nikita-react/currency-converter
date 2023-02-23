@@ -1,7 +1,5 @@
 # Insart Currency Convector
 
 ```
-1. git clone
-2. npm i
-3. npm run dev
+Now working without local server with new proxy server
 ```
